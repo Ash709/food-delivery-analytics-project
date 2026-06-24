@@ -61,14 +61,7 @@ SQL was used to perform structured data analysis, including:
 
 ---
 
-## 📊 Dashboard Preview
 
-<p align="center">
-  <img src="Screenshot 2026-06-24 173924.png
-" width="750"/>
-</p>
-
----
 
 ## 🔍 Key Business Insights
 - UPI emerged as the most preferred payment method  
