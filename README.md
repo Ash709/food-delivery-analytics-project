@@ -64,7 +64,8 @@ SQL was used to perform structured data analysis, including:
 ## 📊 Dashboard Preview
 
 <p align="center">
-  <img src="dashboard.png" width="750"/>
+  <img src="Screenshot 2026-06-24 173924.png
+" width="750"/>
 </p>
 
 ---
