@@ -1,0 +1,159 @@
+ Food Delivery Analytics SQL Queries
+
+# View Complete Dataset
+
+Purpose:
+  To check whether data imported correctly.
+
+SELECT *
+FROM order_delivery;
+
+
+# Total Number of Orders
+
+ Business Question:
+    How many total orders were placed?
+
+SELECT COUNT(order_id) AS total_orders
+FROM order_delivery;
+
+
+
+# Total Revenue
+
+ Business Question:
+   What is the total revenue generated?
+
+SELECT SUM(order_value) AS total_revenue
+FROM order_delivery;
+
+
+
+# Average Order Value
+
+ Business Question:
+    What is the average spending per order?
+
+SELECT AVG(order_value) AS avg_order_value
+FROM order_delivery;
+
+
+# Average Delivery Time
+
+Business Question:
+   What is the average delivery time?
+
+SELECT AVG(delivery_time_minutes) AS avg_delivery_time
+FROM order_delivery;
+
+
+
+# Orders By Payment Method
+
+Business Question:
+ Which payment method is most used?
+
+SELECT payment_method,
+COUNT(*) AS total_orders
+FROM order_delivery
+GROUP BY payment_method;
+
+
+
+# Revenue By Restaurant Type
+
+Business Question:
+   Which restaurant category generates highest revenue?
+
+SELECT restaurant_type,
+SUM(order_value) AS total_revenue
+FROM order_delivery
+GROUP BY restaurant_type
+ORDER BY total_revenue DESC;
+
+
+
+# Delivery Status Analysis
+
+ Business Question:
+    How many orders are delivered, delayed, or cancelled?
+
+SELECT order_status,
+COUNT(*) AS total_orders
+FROM order_delivery
+GROUP BY order_status;
+
+
+
+# Age Group Analysis
+
+ Business Question:
+   Which customer age group places most orders?
+
+SELECT age_group,
+COUNT(*) AS total_orders
+FROM order_delivery
+GROUP BY age_group
+ORDER BY total_orders DESC;
+
+
+
+# Delivery Category Analysis
+
+ Business Question:
+    How many deliveries are fast, medium, or slow?
+
+SELECT delivery_category,
+COUNT(*) AS total_orders
+FROM order_delivery
+GROUP BY delivery_category;
+
+
+
+# High Value Order Analysis
+
+ Business Question:
+   How many high value and regular orders exist?
+
+SELECT high_value_order,
+COUNT(*) AS total_orders
+FROM order_delivery
+GROUP BY high_value_order;
+
+
+
+# Average Revenue By Payment Method
+
+ Business Question:
+    Which payment method generates highest average order value?
+
+SELECT payment_method,
+AVG(order_value) AS avg_order_value
+FROM order_delivery
+GROUP BY payment_method
+ORDER BY avg_order_value DESC;
+
+
+
+# Top Restaurant Categories By Orders
+
+ Business Question:
+   Which restaurant category receives most orders?
+
+SELECT restaurant_type,
+COUNT(order_id) AS total_orders
+FROM order_delivery
+GROUP BY restaurant_type
+ORDER BY total_orders DESC;
+
+
+
+# Delivery Performance By Status
+
+ Business Question:
+   What is the average delivery time for each order status?
+
+SELECT order_status,
+AVG(delivery_time_minutes) AS avg_delivery_time
+FROM order_delivery
+GROUP BY order_status;
